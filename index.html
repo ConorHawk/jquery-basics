@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery Beginner</title>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+
+		.container-fluid {
+			width:88%;
+			margin:0 auto;
+			height:;
+		}
+
+		.row {
+			height:33%;
+		}
+		
+		.row div {
+			height:260px;
+			padding:2em;
+			border:3px solid #e6e6e6;
+			display:flex;
+			justify-content:space-around;
+			align-items:center;
+
+		}
+
+		h1{
+			text-align:center;
+			vertical-align:middle;
+			text-size:30px;
+		}
+
+		.kaboom {
+			background-color:red;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row very-special">
+			<div id="aBox" class="col-xs-4">
+				<h1>A</h1>
+			</div>
+			<div id="bBox" class="col-xs-4">
+				<h1>B</h1>
+			</div>
+			<div id="cBox" class="col-xs-4">
+				<h1>C</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div id="dBox" class="col-xs-4">
+				<h1>D</h1>
+			</div>
+			<div id="eBox" class="col-xs-4">
+				<h1>E</h1>
+			</div>
+			<div id="fBox" class="col-xs-4">
+				<h1>F</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div id="gBox" class="col-xs-4">
+				<h1>G</h1>
+			</div>
+			<div id="hBox" class="col-xs-4">
+				<h1>H</h1>
+			</div>
+			<div id="iBox" class="col-xs-4">
+				<h1>I</h1>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script>
+
+		$(document).ready(function(){
+
+				// $('#aBox').hide(2000, function(){
+				// 	alert('hide complete!');
+				// });
+
+		$('#bBox').click(function(){
+			$(this).fadeOut(1000);
+		});
+
+				//The hover function begins here
+				$('#eBox').hover(
+
+					//Hover on event
+					function(){
+						$('#eBox').addClass('kaboom');
+						console.log('a');
+
+					//Hover off event
+				},function(){
+					$('#eBox').removeClass('kaboom');
+					console.log('b');
+				});
+
+				$( window ).scroll(function() {
+					$( "#dBox" ).animate({ opacity: 1 },90).animate({ opacity: 0 },90);
+				});
+
+				// $(document).keypress(function(e)) {
+				//   if(e.which == 13) {
+				//   	console.log('keypress');
+				//     $('#gBox').animate({ backgroundColor: #ffffff }, 90).animate({ backgroundColor: #000000}, 90);
+				//   }
+				// });
+			});
+
+
+	</script>
+</body>
+</html>
